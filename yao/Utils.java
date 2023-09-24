@@ -22,7 +22,17 @@ public class Utils
 		a=b;
 		b=h;
 	}
-	
+	public static boolean[] int2byte(int src)
+	{
+		boolean[] result=new boolean[32];
+		for(int i=0;i<32;i++)
+		{
+			result[i]=(src&1)==1;
+			src=src>>1;
+		}
+		return result;
+	}
+
 	public static void printLut(Gate gate,String title)
 	{
 		System.out.println(title);
